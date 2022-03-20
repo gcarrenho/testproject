@@ -3,7 +3,7 @@ name: simple job
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   hello:
