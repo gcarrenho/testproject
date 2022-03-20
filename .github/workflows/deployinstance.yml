@@ -14,12 +14,19 @@ jobs:
     
     - name: Terraform Init
       uses: hashicorp/terraform-github-actions/init@v0.4.0
+      env: 
+        GOOGLE_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
     - name: Terraform Validate
       uses: hashicorp/terraform-github-actions/validate@v0.3.7
+      env: 
+        GOOGLE_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+      
 
     - name: Terraform Apply
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
-
+      env: 
+        GOOGLE_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        
     - name: Run a one-line script
       run: echo Hello, world!
