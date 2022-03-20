@@ -29,7 +29,7 @@ jobs:
       run: terraform plan 
 
     - name: Terraform Apply
-      run: terraform apply
+      run: terraform apply 
       env:
         TF_ACTION_WORKING_DIR: 'terraform' 
         GOOGLE_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
