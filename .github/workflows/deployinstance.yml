@@ -11,10 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: SetUp Terraform
-    - uses: hashicorp/setup-terraform@v1
-    
+
     - name: Terraform Init
       run: terraform init
       env: 
