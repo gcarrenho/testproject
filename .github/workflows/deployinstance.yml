@@ -44,6 +44,5 @@ jobs:
         continue-on-error: true
         run: |
           terraform init 
-          terraform apply
-
+          terraform apply -auto-approve
       
