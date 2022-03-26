@@ -1,10 +1,8 @@
 name: terraform-automation
 
-on: 
-  push:
-    branches: [ main, master ]
+on:
   pull_request:
-    branches: [ main, master ]
+    types: [ labeled ]
 
 concurrency: 
   group: ${{ github.action == 'terraform-automation' }}
@@ -17,10 +15,10 @@ defaults:
 
 jobs:
 
-  terraform_plan:
-    name: 'Terraform Plan'
+  deplyment_by_terraform:
+    name: 'Deployment By Terraform'
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' || github.event_name != 'pull_request'
+    if: ${{ github.event.label.name == 'deploy-staging' }}
 
     # Add "id-token" with the intended permissions.
     permissions:
