@@ -26,7 +26,7 @@ jobs:
     permissions:
       contents: 'read'
       id-token: 'write'
-
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -37,5 +37,13 @@ jobs:
         with:
           workload_identity_provider: 'projects/709484762220/locations/global/workloadIdentityPools/my-pool/providers/my-provide'
           service_account: 'cuentadetest@gcarreno-project-test.iam.gserviceaccount.com'
+ 
       
-     
+      # Generates an execution plan for Terraform
+      - name: Terraform Apply
+        continue-on-error: true
+        run: |
+          terraform init 
+          terraform apply
+
+      
