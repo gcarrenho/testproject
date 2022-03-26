@@ -35,7 +35,7 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0'
         with:
-          workload_identity_provider: 'projects/709484762220/locations/global/workloadIdentityPools/my-pool/providers/my-provide'
+          workload_identity_provider: 'projects/709484762220/locations/global/workloadIdentityPools/my-test/providers/my-test-provider'
           service_account: 'cuentadetest@gcarreno-project-test.iam.gserviceaccount.com'
  
       
